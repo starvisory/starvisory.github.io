@@ -1,0 +1,193 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Star Visory</title>
+    <link rel="shortcut icon" href="img/logo star-PhotoRoom.png-PhotoRoom.png" type="image/x-icon">
+    <link rel="stylesheet" href="MVC/vista/Dep.css">
+        
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&display=swap" rel="stylesheet"> 
+        <link rel="shortcut icon" href="MVC/vista/img2/logo.png">
+        
+</head>
+
+<body>
+    <header>
+
+        <nav class="menu">
+			<div class="hamburguesa" onclick="mostrar()">
+				<span></span> <span></span> <span></span>
+			</div>
+                    <label class="logo">Star Visory</label>
+    <ul id="menu-desplegable">
+        <li><span class="cerrar" onclick="ocultar()">x</span></li>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="Deportes.html">Visorías</a></li>
+        <li><a href="MVC/modelo/mensaje.php">Datos</a></li>
+        <li><a href="quienessomos.html">Acerca De</a></li>
+        <li><a href="usuarios.php">Usuarios</a></li>
+        <li><a href="Login.php">Inicio Sesión</a></li>
+            
+    </ul>
+        </nav>
+        <section class="textos-header">
+            <h1>DEPORTES</h1>
+            <h2>“No te puedes poner ningún límite. No hay nada imposible”</h2>
+                
+                              <div id="mensaje-container"></div>
+        </section>
+        <div class="wave" style="height: 150px; overflow: hidden;"><svg viewBox="0 0 500 150" preserveAspectRatio="none"
+                style="height: 100%; width: 100%;">
+                <path d="M0.00,49.98 C150.00,150.00 349.20,-50.00 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+                    style="stroke: none; fill: #000020;"></path>
+            </svg></div>
+    </header>
+    <div class="contenido">
+    <main>
+        <section class="contenedor sobre-nosotros">
+            <h2 class="titulo">Ventaja de los Deportes</h2>
+            <div class="contenedor-sobre-nosotros">
+                <img src="MVC/vista/Deportes/imgDep/ilustracion2.svg" alt="" class="imagen-about-us">
+                <div class="contenido-textos">
+                    <h3><span>1</span></h3>
+                    <p>De acuerdo con especialistas, la actividad física y deportiva además de reducir el estrés, 
+                        los trastornos del sueño, depresión, ansiedad y otras alteraciones, también reduce los 
+                        riesgos de sufrir algunos problemas de salud, tanto físicos como mentales, tales como los
+                        estados de tensión y ansiedad.</p>
+                    <h3><span>2</span></h3>
+                    <p>Por un lado, permite alas personas socializarse con otros iguales, y, por otro lado, supone una 
+                        garantía de buena salud y prevención de la obesidad y de reducción del estrés entre adolescentes.</p>
+                    <h3><span>3</span></h3>
+                    <p>Favorece la circulación sanguínea, disminuye la coagulación en los vasos sanguíneos, reduce la presión 
+                        sanguínea por lo que el corazón, venas y arterias se encuentran protegidas. El oxigeno se mantiene
+                        durante más tiempo en los pulmones, ya que los músculos respiratorios tienen mayor resistencia.</p>
+                </div>
+            </div>
+        </section>
+        <section class="portafolio">
+            <div class="contenedor">
+                <h2 class="titulo">Catálogo de Deportes</h2>
+                <div class="galeria-port">
+                    <div class="imagen-port">
+                        <a href="MVC/vista/Deportes/Futbol.html">
+                        <img src="MVC/vista/Deportes/imgDep/img1.jpg" height="200px" width="270px" alt="">
+                        <div class="hover-galeria">
+                            <img src="MVC/vista/Deportes/imgDep/icono1.png" alt="Futbol">
+                            <p>Futbol</p>
+                        </div>
+                        </a>
+                    </div>
+                    <div class="imagen-port">
+                        <a href="MVC/vista/Deportes/Voleibol.html">
+                        <img src="MVC/vista/Deportes/imgDep/img2.jpg" height="200px" width="270px" alt="">
+                        <div class="hover-galeria">
+                            <img src="MVC/vista/Deportes/imgDep/icono1.png" alt="Voleibol">
+                            <p>Voleibol</p>
+                        </div>
+                        </a> 
+                    </div>
+                    <div class="imagen-port">
+                        <a href="MVC/vista/Deportes/Tenis.html">
+                        <img src="MVC/vista/Deportes/imgDep/img3.jpg"  height="200px" width="270px" alt="">
+                        <div class="hover-galeria">
+                            <img src="MVC/vista/Deportes/imgDep/icono1.png" alt="Tenis">
+                            <p>Tenis</p>
+                        </div>
+                        </a> 
+                    </div>
+                    <div class="imagen-port">
+                        <a href="MVC/vista/Deportes/Ping pong.html">
+                        <img src="MVC/vista/Deportes/imgDep/img4.jpg" height="200px" width="270px" alt="">
+                        <div class="hover-galeria">
+                            <img src="MVC/vista/Deportes/imgDep/icono1.png" alt="">
+                            <p>Ping Pong</p>
+                        </div>
+                        </a> 
+                    </div>
+                    <div class="imagen-port">
+                        <a href="MVC/vista/Deportes/Boxeo.html">
+                        <img src="MVC/vista/Deportes/imgDep/img5.jpg" height="200px" width="270px" alt="">
+                        <div class="hover-galeria">
+                            <img src="MVC/vista/Deportes/imgDep/icono1.png" alt="">
+                            <p>Boxeo</p>
+                        </div>
+                        </a> 
+                    </div>
+                    <div class="imagen-port">
+                        <a href="MVC/vista/Deportes/Basketball.html">
+                        <img src="MVC/vista/Deportes/imgDep/img6.jpg" height="200px" width="270px" alt="">
+                        <div class="hover-galeria">
+                            <img src="MVC/vista/Deportes/imgDep/icono1.png" alt="">
+                            <p>Basketball</p>
+                        </div>
+                        </a> 
+                    </div>
+                    <div class="imagen-port">
+                        <a href="MVC/vista/Deportes/Ciclismo.html">
+                        <img src="MVC/vista/Deportes/imgDep/img7.jpg" height="200px" width="270px" alt="">
+                        <div class="hover-galeria">
+                            <img src="MVC/vista/Deportes/imgDep/icono1.png" alt="Ciclismo">
+                            <p>Ciclismo</p> 
+                        </div>
+                        </a> 
+                    </div>
+                    <div class="imagen-port">
+                        <a href="MVC/vista/Deportes/Natacion.html">
+                        <img src="MVC/vista/Deportes/imgDep/img8.jpg" height="200px" width="270px" alt="">
+                        <div class="hover-galeria">
+                            <img src="MVC/vista/Deportes/imgDep/icono1.png" alt="">
+                            <p>Natación</p>
+                        </div>
+                        </a> 
+                    </div>
+                </div>
+            </div>
+        </section>
+
+<section class="clientes contenedor">
+            <h2 class="titulo">Comentarios</h2>
+            <div class="cards">
+                <div class="card">
+                    <img src="MVC/vista/Deportes/imgDep/face1.jpg" alt="">
+                    <div class="contenido-texto-card">
+                        <h4>Jan Oliver</h4>
+                        <p>Star Visory me ayudó a formar parte del que ahora es uno de los equipos de Baloncesto más reconocido a nivel mundial.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="MVC/vista/Deportes/imgDep/face2.jpg" alt="">
+                    <div class="contenido-texto-card">
+                        <h4>María Sonia Rial</h4>
+                        <p>Encontrar una visoría nunca había sido tan sencillo!!.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        </section>
+    </main>
+</div>
+    <footer>
+        <div class="contenedor-footer">
+            <div class="content-foo">
+                <h4>Telefóno</h4>
+                <p>831-176-2539</p>
+            </div>
+            <div class="content-foo">
+                <h4>Correo electrónico</h4>
+                <p>StarVisory@gmail.com</p>
+            </div>
+            <div class="content-foo">
+                <h4>Ubicación</h4>
+                <p>Santa Catarina, Monterrey</p>
+            </div>
+        </div>
+        <h2 class="titulo-final">&copy; Star Visory</h2>
+    </footer>
+</body>
+
+</html>

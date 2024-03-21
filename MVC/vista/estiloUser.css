@@ -1,0 +1,77 @@
+ @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@600&family=Montserrat&display=swap');
+ *{
+	background: #000020;
+        color: white;
+        border-radius: 20;
+        	font-family: "Montserrat", sans-serif;
+                
+}
+table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    th, td {
+      text-align: center;
+      padding: 8px;
+      border: 1px solid #9032bb;
+    }
+    th {
+      background-color: #191987;
+      color: white;
+    }
+    
+    a{
+      text-decoration: none;
+      font-weight: bold;
+      color: #F18D1F;
+    }
+td{
+max-width: 200px; word-wrap: break-word;
+}
+
+nav.menu {
+   top: 0;
+   left: 0;
+}
+.menu{
+    position: fixed;
+    width: 100%;
+    background-color: #000020;
+    z-index: 10;
+
+}
+.menu .logo{
+    color: white;
+    font-size: 25px;
+    line-height: 70px;
+    font-weight: 400;
+    margin-left: 20px;
+        font-weight: bolder;
+        float: left;
+}
+
+
+.menu ul{
+    float:  right;
+    align-items: center;
+}
+.menu ul li{
+    display: inline-block;
+    margin-top: 25px;
+    margin-bottom: 0px;
+}
+.menu ul li a{
+    font-size: 18px;
+    padding: 25px 6px;
+    color: #9032BB;
+    font-family: 'Montserrat';
+    font-weight: 700;
+    text-decoration: none;
+}
+.menu ul li a:hover{
+    color: black;
+    background: #9032bb;
+    font-size: 18px;
+    font-family: 'Montserrat';
+    transition: 0.5s;
+    }
