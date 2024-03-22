@@ -1,8 +1,8 @@
 <?php
-$servername = "localhost"; // localhost
-$username = "root"; // nombre de usuario de MariaDB
-$password = "contra"; // contraseña de MariaDB
-$database = "mysql"; // El nombre de tu base de datos
+$servername = "db"; // localhost
+$username = "mariadb"; // nombre de usuario de MariaDB
+$password = "mariadb"; // contraseña de MariaDB
+$database = "mariadb"; // El nombre de tu base de datos
 
 // Crear una conexión
 $conn = mysqli_connect($servername, $username, $password, $database);
@@ -11,5 +11,4 @@ $conn = mysqli_connect($servername, $username, $password, $database);
 if (!$conn) {
     die("Error de conexión: " . mysqli_connect_error());
 }
-echo "Conexión exitosa";
 ?>

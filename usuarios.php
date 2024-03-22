@@ -1,10 +1,11 @@
 <?php
 require_once 'MVC/modelo/conexion.php';
 require_once 'MVC/modelo/cerrar_sesion.php'; // Agrega esta línea para incluir el código de cerrar_sesion.php
-session_start();
+
+// No es necesario llamar a session_start() aquí si ya se ha iniciado en cerrar_sesion.php u otro lugar.
 
 // Verificar si el usuario ha iniciado sesión y si las validaciones de ID y correo electrónico fueron exitosas
-if (!isset($_SESSION['usuario']) || !isset($_SESSION['id']) || !isset($_SESSION['email'])) {
+if (!isset($_SESSION['name']) || !isset($_SESSION['id']) || !isset($_SESSION['email'])) {
     echo '<script>alert("Favor de iniciar sesión primero"); window.location = "Login.php";</script>';
     session_destroy();
     die();
@@ -35,8 +36,8 @@ if (!isset($_SESSION['usuario']) || !isset($_SESSION['id']) || !isset($_SESSION[
 
 <?php
 // Consultar los datos de la tabla de usuarios
-$sql = "SELECT * FROM StarVisory";
-$resultado = mysqli_query($conexion, $sql);
+$sql = "SELECT * FROM users";
+$resultado = mysqli_query($conn, $sql);
 
 // Crear una tabla HTML para mostrar los datos
 echo "<table>";
@@ -45,10 +46,10 @@ echo "<tr><th>Usuario</th><th>Contraseña</th><th>Email</th><th>Rol</th><th>Edit
 // Mostrar los datos en la tabla HTML
 while ($fila = mysqli_fetch_assoc($resultado)) {
   echo "<tr>";
-  echo "<td>" . $fila["usuario"] . "</td>";
-  echo "<td>" . $fila["contraseña"] . "</td>";
+  echo "<td>" . $fila["name"] . "</td>";
+  echo "<td>" . $fila["password"] . "</td>";
   echo "<td>" . $fila["email"] . "</td>";
-  echo "<td>" . $fila["Rol_Fk"] . "</td>";
+  echo "<td>" . $fila["rol_id"] . "</td>";
   echo '<td><a href="MVC/controlador/update.php?id='.$fila['id'].'">Editar</a></td>';
   echo '<td><a href="MVC/controlador/delete.php?id='.$fila['id'].'">Eliminar</a></td>';
   echo "</tr>";
@@ -59,7 +60,7 @@ echo "</table>";
 mysqli_free_result($resultado);
 
 // Cerrar la conexión
-mysqli_close($conexion);
+mysqli_close($conn);
 ?>
 
 <a href="#" onclick="cerrarSesion()">Cerrar Sesión</a> <!-- Cambiado a un enlace que llama a la función cerrarSesion() -->

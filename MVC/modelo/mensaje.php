@@ -10,7 +10,7 @@ if (isset($_SESSION["id"]) && isset($_SESSION["name"]) && isset($_SESSION["email
     if (isset($_SESSION["rol_fk"]) && $_SESSION["rol_fk"] !== "") {
         $mensaje .= "<p>Rol: " . $_SESSION["rol_fk"] . "</p>";
     } else {
-        $mensaje .= "<p>Rol: común</p>";
+        $mensaje .= "<p>Rol: 2</p>";
     }
 } else {
     $mensaje = "<p>No se han cargado datos de sesión.</p>";

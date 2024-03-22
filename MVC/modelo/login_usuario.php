@@ -2,10 +2,10 @@
 
 // Función para conectar a la base de datos
 function conectarBD() {
-    $servername = "localhost"; // Puedes necesitar cambiar esto si tu servidor de base de datos no está en localhost
-    $username = "root"; // Tu nombre de usuario de MariaDB
-    $password_db = "contra"; // Tu contraseña de MariaDB
-    $dbname = "mysql"; // El nombre de tu base de datos (ajustar según corresponda)
+    $servername = "db"; // Puedes necesitar cambiar esto si tu servidor de base de datos no está en localhost
+    $username = "mariadb"; // Tu nombre de usuario de MariaDB
+    $password_db = "mariadb"; // Tu contraseña de MariaDB
+    $dbname = "mariadb"; // El nombre de tu base de datos (ajustar según corresponda)
 
     $conn = new mysqli($servername, $username, $password_db, $dbname);
 
@@ -79,6 +79,8 @@ function validarSesion() {
         exit;
     }
 
+    
+
     // Conexión a la base de datos
     $conn = conectarBD();
 
@@ -88,6 +90,18 @@ function validarSesion() {
     $stmt->bind_param("is", $_SESSION["id"], $_SESSION["email"]);
     $stmt->execute();
     $result = $stmt->get_result();
+
+    if ($result->num_rows == 0) {
+        header("Location: ../../Login.php");
+        exit();
+    } else {
+        $row = $result->fetch_assoc();
+        if (isset($row['rol_id'])) {
+            $rol = $row['rol_id'];
+        } else {
+            $rol = 0; 
+        }
+    }
 
     // Verificar si se encontraron resultados en la consulta
     if ($result->num_rows == 0) {

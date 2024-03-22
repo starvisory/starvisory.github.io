@@ -1,42 +1,47 @@
 <?php
-
 include 'conexion.php';
 
-$usuario = $_POST['name'];
-$email = $_POST['email'];
-$contrasena = $_POST['password'];
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $usuario = $_POST['usuario'] ?? '';
+    $email = $_POST['email'] ?? '';
+    $contrasena = $_POST['contrasena'] ?? '';
 
-//Encriptar contraseña
-$contrasena_encriptada = password_hash($contrasena, PASSWORD_BCRYPT);
+    // Verificar si se recibieron los datos correctamente
+    if (empty($usuario) || empty($email) || empty($contrasena)) {
+        die("Error: Todos los campos son obligatorios.");
+    }
 
-// Conexión a la base de datos
-$conexion = conectarBD();
+    // Encriptar contraseña
+    $contrasena_encriptada = password_hash($contrasena, PASSWORD_BCRYPT);
 
-// Consulta para obtener el ID del rol predeterminado (común)
-$rol_query = "SELECT id FROM roles WHERE name = 'común'";
-$resultado_rol = mysqli_query($conexion, $rol_query);
-$fila_rol = mysqli_fetch_assoc($resultado_rol);
-$rol_id = $fila_rol['id'];
+    // Preparar la consulta para obtener el ID del rol predeterminado (común)
+    $rol_query = "SELECT id FROM roles WHERE id = '2'";
+    $resultado_rol = mysqli_query($conn, $rol_query);
+    if (!$resultado_rol) {
+        die("Error en la consulta de roles: " . mysqli_error($conn));
+    }
 
-// Preparar la consulta para insertar el usuario en la tabla users
-$query = "INSERT INTO users (name, password, email, rol_id) VALUES ('$usuario', '$contrasena_encriptada', '$email', '$rol_id')";
+    $fila_rol = mysqli_fetch_assoc($resultado_rol);
+    if (!$fila_rol) {
+        die("No se encontró el rol predeterminado '2'");
+    }
 
-// Ejecutar la consulta
-$ejecutar = mysqli_query($conexion, $query);
+    $rol_id = $fila_rol['id'];
 
-if ($ejecutar) {
+    // Preparar la consulta para insertar el usuario en la tabla users
+    $query = "INSERT INTO users (name, password, email, rol_id) VALUES ('$usuario', '$contrasena_encriptada', '$email', '$rol_id')";
+
+    // Ejecutar la consulta
+    $ejecutar = mysqli_query($conn, $query);
+    if (!$ejecutar) {
+        die("Error en la inserción: " . mysqli_error($conn));
+    }
+
     echo '<script>
     alert("Usuario Registrado Exitosamente");
     window.location = "../../Registro.php";
     </script>';
 } else {
-    echo '<script>
-    alert("Inténtalo de nuevo, usuario no registrado");
-    window.location = "../../Registro.php";
-    </script>';
+    echo "Error: Este script solo se puede acceder mediante una solicitud POST.";
 }
-
-// Cerrar la conexión a la base de datos
-mysqli_close($conexion);
-
 ?>
